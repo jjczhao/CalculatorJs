@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Pad from './Pad'
+
+
+const numPads = [
+  {padType:'number', symbol: '7'},
+  {padType:'number', symbol: '8'},
+  {padType:'number', symbol: '9'},
+  {padType:'number', symbol: '4'},
+  {padType:'number', symbol: '5'},
+  {padType:'number', symbol: '6'},
+  {padType:'number', symbol: '1'},
+  {padType:'number', symbol: '2'},
+  {padType:'number', symbol: '3'},
+];
+
+const operatorPads = [
+  {padType:'operator', symbol: '+'},
+  {padType:'operator', symbol: '-'},
+  {padType:'operator', symbol: '/'},
+  {padType:'operator', symbol: '*'},
+  {padType:'operator', symbol: '='}
+]
+
 
 function App() {
+
+  const numbers= numPads.map( (x,index) => <Pad key={index} padType={x.padType} symbol={x.symbol}></Pad>)
+  const operators = operatorPads.map( (x,index) => <Pad key={index} padType={x.padType} symbol={x.symbol}></Pad>)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>{numbers}</div>
+        <div>{operators}</div>
     </div>
   );
 }
