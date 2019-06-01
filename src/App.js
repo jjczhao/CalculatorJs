@@ -82,7 +82,8 @@ class App extends React.Component {
   }
 
   handleEvaluation(){
-    if(this.state.inputs.length >= 2){
+    console.log(this.state.nums.match(NUMERIC_FORMAT));
+    if(this.state.inputs.length >= 2 && this.state.nums.match(NUMERIC_FORMAT)){
       this.setState({inputs:[...this.state.inputs,this.state.nums]},function(){
         this.setState({inputs:[],nums:'0',result:eval(this.state.inputs.join(''))}, function(){this.setState({previousResult:this.state.result})});
       });
