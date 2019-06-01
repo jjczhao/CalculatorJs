@@ -1,33 +1,150 @@
-.App {
+*{
+  background-color: gray;
+}
+
+
+.App{
+  margin: 10% auto;
+}
+
+.pad{
+  margin:5px;
+  padding: 15px;
+  border: 2px solid black;
+  user-select: none;
+  border-radius: 5px;
+  background-color: #7F7F00;
+  color: white;
+  font-weight: 600;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.pad:hover{
+  border: 2px solid black;
+  background-color: #fffff6;
+  color: black;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.pad:active{
+  transform: translateY(2px);
 }
 
-.App-link {
-  color: #61dafb;
+.display{
+  max-width: 352px;
+  width: 97%;
+  border:2px solid black;
+  margin: 2px auto;
+  text-align: end;
+  border-radius: 5px;
+  min-height: 50px;
+  padding: 10px;
+  height: 50px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.2em;
+  font-weight: 900;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.pad-container{
+  margin: 0 auto;
+  max-width: 352px;
+  width: 352px;
+  display: grid;
+  grid-template-columns: 88px 88px 88px 88px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "display1 display1 display1 display1"
+  "display2 display2 display2 display2"
+  "clear clear operator2 operator3"
+  "item0 item1 item2 operator0"
+  "item3 item4 item5 operator1"
+  "item6 item7 item8 equal"
+  "item9 item9 item10 equal"; 
+  background-color: lightcyan;
+  border: 1px solid lightpink;
+  border-radius: 5px;
 }
+
+.clear{
+  grid-area: clear;
+  background:darkred;
+}
+
+.clear:hover{
+  background: red;
+}
+
+.item0{
+  grid-area: item0;
+}
+.item1{
+  grid-area: item1;
+}
+.item2{
+  grid-area: item2;
+}
+.item3{
+  grid-area: item3;
+}
+.item4{
+  grid-area: item4;
+}
+
+.item5{
+  grid-area: item5;
+}
+
+.item6{
+  grid-area: item6;
+}
+.item7{
+  grid-area: item7;
+}
+
+.item8{
+  grid-area: item8;
+}
+
+.item9{
+  grid-area: item9;
+}
+
+.equal{
+  grid-area: equal;
+  background-color: darkblue;
+}
+
+.equal:hover{
+  background-color: blue;
+}
+
+.operator0{
+  grid-area: operator0;
+}
+
+.operator1{
+  grid-area: operator1;
+}
+.operator2{
+  grid-area: operator2;
+}
+.operator3{
+  grid-area: operator3;
+}
+
+.operator4{
+  grid-area: item10;
+}
+
+#display1{
+  grid-area: display1;
+}
+
+#display{
+  grid-area: display2;
+}
+
+
